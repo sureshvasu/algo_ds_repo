@@ -33,10 +33,11 @@ public class ListNode {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         ListNode currentNode = this;
-        while (currentNode!=null){
+        ListNode headNode = currentNode;
+        do{
             stringBuilder.append(printNode(currentNode)+"->");
             currentNode = currentNode.getNextNode();
-        }
+        }while (currentNode!=null && currentNode != headNode);
         stringBuilder.append("null");
         return stringBuilder.toString();
     }
